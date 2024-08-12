@@ -54,7 +54,7 @@ cp $(GOBIN)/achilles /usr/local/bin (or copy it to root as achillesd and use it 
 ### Init
 
 ```bash:
-achillesd init "<moniker-name>" --chain-id <tets-core-1>
+achillesd init "<moniker-name>" --chain-id test-core-1
 ```
 
 ### Set minimum-gas-prices = "" in app.toml to minimum-gas-prices = "1stake"
@@ -103,7 +103,7 @@ achillesd genesis add-genesis-account <key-name> 1000000stake
 
 achillesd genesis gentx <key-name> 1000000stake \
   --pubkey=$(achillesd tendermint show-validator) \
-  --chain-id=<current course chain id> \
+  --chain-id=test-core-1 \
   --moniker="my-moniker" \
   --commission-rate="0.10" \
   --commission-max-rate="0.20" \
