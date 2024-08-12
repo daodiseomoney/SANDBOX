@@ -1,0 +1,17 @@
+syntax = "proto3";
+package achilles.achilles;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "achilles/achilles/params.proto";
+
+option go_package = "github.com/olimdzhon/achilles/x/achilles/types";
+
+// GenesisState defines the achilles module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
