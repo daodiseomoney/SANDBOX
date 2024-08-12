@@ -28,7 +28,7 @@ apt install mc htop screen git gcc make
 ### Clone source from repo
 
 ```
-git clone git@github.com:daodiseomoney/SANDBOX.git
+git clone https://github.com/daodiseomoney/SANDBOX.git
 ```
 
 ### Open source directory
