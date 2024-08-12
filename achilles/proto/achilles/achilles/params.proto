@@ -1,0 +1,15 @@
+syntax = "proto3";
+package achilles.achilles;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/olimdzhon/achilles/x/achilles/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (amino.name) = "achilles/x/achilles/Params";
+  option (gogoproto.equal) = true;
+
+  
+}

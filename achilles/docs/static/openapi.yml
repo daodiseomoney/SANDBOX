@@ -1,0 +1,148 @@
+{
+  "id": "github.com/olimdzhon/achilles",
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "swagger": "2.0",
+  "info":
+    {
+      "description": "Chain github.com/olimdzhon/achilles REST API",
+      "title": "HTTP API Console",
+      "contact": { "name": "github.com/olimdzhon/achilles" },
+      "version": "version not set",
+    },
+  "paths":
+    {
+      "/achilles.achilles.Msg/UpdateParams":
+        {
+          "post":
+            {
+              "tags": ["Msg"],
+              "summary": "UpdateParams defines a (governance) operation for updating the module\nparameters. The authority defaults to the x/gov module account.",
+              "operationId": "GithubComolimdzhonachillesMsg_UpdateParams",
+              "parameters":
+                [
+                  {
+                    "description": "MsgUpdateParams is the Msg/UpdateParams request type.",
+                    "name": "body",
+                    "in": "body",
+                    "required": true,
+                    "schema":
+                      {
+                        "$ref": "#/definitions/achilles.achilles.MsgUpdateParams",
+                      },
+                  },
+                ],
+              "responses":
+                {
+                  "200":
+                    {
+                      "description": "A successful response.",
+                      "schema":
+                        {
+                          "$ref": "#/definitions/achilles.achilles.MsgUpdateParamsResponse",
+                        },
+                    },
+                  "default":
+                    {
+                      "description": "An unexpected error response.",
+                      "schema": { "$ref": "#/definitions/google.rpc.Status" },
+                    },
+                },
+            },
+        },
+      "/olimdzhon/achilles/achilles/params":
+        {
+          "get":
+            {
+              "tags": ["Query"],
+              "summary": "Parameters queries the parameters of the module.",
+              "operationId": "GithubComolimdzhonachillesQuery_Params",
+              "responses":
+                {
+                  "200":
+                    {
+                      "description": "A successful response.",
+                      "schema":
+                        {
+                          "$ref": "#/definitions/achilles.achilles.QueryParamsResponse",
+                        },
+                    },
+                  "default":
+                    {
+                      "description": "An unexpected error response.",
+                      "schema": { "$ref": "#/definitions/google.rpc.Status" },
+                    },
+                },
+            },
+        },
+    },
+  "definitions":
+    {
+      "achilles.achilles.MsgUpdateParams":
+        {
+          "description": "MsgUpdateParams is the Msg/UpdateParams request type.",
+          "type": "object",
+          "properties":
+            {
+              "authority":
+                {
+                  "description": "authority is the address that controls the module (defaults to x/gov unless overwritten).",
+                  "type": "string",
+                },
+              "params":
+                {
+                  "description": "params defines the module parameters to update.\n\nNOTE: All parameters must be supplied.",
+                  "$ref": "#/definitions/achilles.achilles.Params",
+                },
+            },
+        },
+      "achilles.achilles.MsgUpdateParamsResponse":
+        {
+          "description": "MsgUpdateParamsResponse defines the response structure for executing a\nMsgUpdateParams message.",
+          "type": "object",
+        },
+      "achilles.achilles.Params":
+        {
+          "description": "Params defines the parameters for the module.",
+          "type": "object",
+        },
+      "achilles.achilles.QueryParamsResponse":
+        {
+          "description": "QueryParamsResponse is response type for the Query/Params RPC method.",
+          "type": "object",
+          "properties":
+            {
+              "params":
+                {
+                  "description": "params holds all the parameters of this module.",
+                  "$ref": "#/definitions/achilles.achilles.Params",
+                },
+            },
+        },
+      "google.protobuf.Any":
+        {
+          "type": "object",
+          "properties": { "@type": { "type": "string" } },
+          "additionalProperties": {},
+        },
+      "google.rpc.Status":
+        {
+          "type": "object",
+          "properties":
+            {
+              "code": { "type": "integer", "format": "int32" },
+              "details":
+                {
+                  "type": "array",
+                  "items":
+                    {
+                      "type": "object",
+                      "$ref": "#/definitions/google.protobuf.Any",
+                    },
+                },
+              "message": { "type": "string" },
+            },
+        },
+    },
+  "tags": [{ "name": "Query" }, { "name": "Msg" }],
+}
