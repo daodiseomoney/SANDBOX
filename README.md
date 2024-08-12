@@ -57,7 +57,7 @@ cp $(GOBIN)/achilles /usr/local/bin (or copy it to root as achillesd and use it 
 achillesd init "<moniker-name>" --chain-id test-core-1
 ```
 
-### Set minimum-gas-prices = "" in app.toml to minimum-gas-prices = "1stake"
+### Set minimum-gas-prices = "" in app.toml to minimum-gas-prices = "1uodis"
 
 ### Generate keys
 
@@ -91,17 +91,17 @@ achillesd keys show <key-name> -a
 ### Create account to genesis
 
 ```
-achillesd genesis add-genesis-account <key-name> 1000000stake
+achillesd genesis add-genesis-account <key-name> 1000000uodis
 ```
 
 ### Create GenTX
 
 ```
 # Create the gentx.
-# Note, your gentx will be rejected if you use any amount greater than 1000000stake.
+# Note, your gentx will be rejected if you use any amount greater than 1000000uodis.
 # Make sure that all participants built their gentx files without typos.
 
-achillesd genesis gentx <key-name> 1000000stake \
+achillesd genesis gentx <key-name> 1000000uodis \
   --pubkey=$(achillesd tendermint show-validator) \
   --chain-id=test-core-1 \
   --moniker="my-moniker" \
@@ -115,7 +115,7 @@ achillesd genesis gentx <key-name> 1000000stake \
 ```
 # Add account addresses of all participants before generating genesis.
 # (whose Gentx files you're using to generate genesis)
-achillesd genesis add-genesis-account <account-address> 1000000stake
+achillesd genesis add-genesis-account <account-address> 1000000uodis
 ```
 
 ### Generate genesis
