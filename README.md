@@ -19,9 +19,21 @@ sudo apt-get upgrade
 apt install mc htop screen git gcc make
 ```
 
-### Put GOPATH and GOBIN to bash_profile
+### Put PATH to bash_profile
+
+```
+nano .profile
+```
+
+```
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+```
 
 ### Use source ~/.profile
+
+```
+source .profile
+```
 
 ## Binary building
 
