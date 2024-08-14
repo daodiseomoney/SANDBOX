@@ -77,7 +77,7 @@ install: go.sum
 	go install -mod=readonly $(BUILD_FLAGS) ./cmd/achillesd
 
 build:
-	go build $(BUILD_FLAGS) -o $(GOBIN)/achilles ./cmd/achillesd
+	go build $(BUILD_FLAGS) -o $(GOBIN)/achillesd ./cmd/achillesd
 
 $(BUILDDIR)/:
 	mkdir -p $(BUILDDIR)/
