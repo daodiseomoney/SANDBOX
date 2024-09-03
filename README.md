@@ -36,12 +36,18 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 source .profile
 ```
 
+### Check go
+
+```
+go version
+```
+
 ### Install packages
 
 ```
 sudo apt-get update
 sudo apt-get upgrade
-apt install mc htop screen git gcc make
+sudo apt install mc htop screen git gcc make
 ```
 
 ## Binary building
@@ -73,6 +79,10 @@ achillesd init "<moniker-name>" --chain-id test-core-1
 ```
 
 ### Set minimum-gas-prices = "" in app.toml to minimum-gas-prices = "1uodis"
+
+```
+nano ~/.achilles/config/app.toml
+```
 
 ### Generate keys
 
