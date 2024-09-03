@@ -78,7 +78,7 @@ make install
 achillesd init "<moniker-name>" --chain-id test-core-1
 ```
 
-### Set minimum-gas-prices = "" in app.toml to minimum-gas-prices = "1uodis"
+### Set minimum-gas-prices = "" in app.toml to minimum-gas-prices = "0.25uodis"
 
 ```
 nano ~/.achilles/config/app.toml
