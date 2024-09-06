@@ -14,14 +14,41 @@ name: achilles
 ### Install go
 
 ```
-sudo apt-get update
-sudo apt-get upgrade
-apt install mc htop screen git gcc make
+sudo rm -rvf /usr/local/go/
+wget https://golang.org/dl/go1.22.4.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.22.4.linux-amd64.tar.gz
+rm go1.22.4.linux-amd64.tar.gz
 ```
 
-### Put GOPATH and GOBIN to bash_profile
+### Put PATH to ~/.profile
+
+```
+nano .profile
+```
+
+```
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+```
 
 ### Use source ~/.profile
+
+```
+source .profile
+```
+
+### Check go
+
+```
+go version
+```
+
+### Install packages
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install mc htop screen git gcc make
+```
 
 ## Binary building
 
@@ -40,13 +67,7 @@ cd SANDBOX/achilles
 ### Build binary
 
 ```
-make build
-```
-
-### Copy binary to usr/local/bin or to root
-
-```
-cp $(GOBIN)/achilles /usr/local/bin (or copy it to root as achillesd and use it like ./achillesd)
+make install
 ```
 
 ## Network launch
@@ -57,7 +78,11 @@ cp $(GOBIN)/achilles /usr/local/bin (or copy it to root as achillesd and use it 
 achillesd init "<moniker-name>" --chain-id test-core-1
 ```
 
-### Set minimum-gas-prices = "" in app.toml to minimum-gas-prices = "1uodis"
+### Set minimum-gas-prices = "" in app.toml to minimum-gas-prices = "0.25uodis"
+
+```
+nano ~/.achilles/config/app.toml
+```
 
 ### Generate keys
 
